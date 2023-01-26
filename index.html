@@ -49,8 +49,40 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="home">
+  <!-- ヘッダー -->
+  <header class="header">
+    <!-- ヘッダーの内側（コンテンツ幅揃え） -->
+    <div class="header_inner wrapper">
+      <!-- ロゴ -->
+      <p class="header_logo">
+        <a href="/" class="header_link">
+          Your Name
+          <span>Portfolio</span>
+        </a>
+      </p>
 
+      <!-- ナビ -->
+      <nav class="header_nav">
+        <ul class="header_nav_list">
+          <li><a href="/work">Works</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <!-- SNSボタン -->
+          <li>
+            <ul class="sns_list">
+              <li><a href="https://twitter.com/dutchisover" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-twitter"></i></a></li>
+              <li><a href="https://www.instagram.com/dutch.logica/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-instagram"></i></a></li>
+              <li><a href="https://www.facebook.com/iwadatedutch/" target="_blank" rel="noopener noreferrer"><i
+                    class="fab fa-facebook"></i></a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"

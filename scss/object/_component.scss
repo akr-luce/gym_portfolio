@@ -1,0 +1,13 @@
+@use '../foundation/setting' as *;
+
+// SNSボタン
+.sns_list {
+  display: flex;
+  font-size: 20px;
+  gap: .5em; //flex要素のすき間調整ができるプロパティ。古いブラウザには効かないので注意
+
+  // SNSボタンは別タブに自動付与されるアイコンを消す
+  a[target=_blank]::after {
+    content: none;
+  }
+}

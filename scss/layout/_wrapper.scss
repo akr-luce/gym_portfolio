@@ -1,0 +1,17 @@
+@use '../foundation/setting' as *;
+
+// コンテンツ幅用の汎用class
+.wrapper {
+  width: 90%;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// 左右の余白がない wrapper（主にトップで使用）
+.wrapper-full {
+  width: 100%;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}

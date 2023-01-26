@@ -1,0 +1,122 @@
+@use "../foundation/setting" as *;
+
+// ヘッダー全体（ロゴとナビ）
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .3);
+}
+
+// ヘッダーのコンテンツ幅の内側（ロゴとナビを左右に）
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+// ロゴ
+.header_logo {
+  position: relative;
+  padding: .75em 2em .75em 0;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: italic;
+  color: #fff;
+  border-radius: 0 0 50px 0;
+  background-color: $color_black;
+
+  // .header_logo のスマホ調整
+  @include media() {
+    padding-left: 1em;
+    font-size: 5vw;
+    font-weight: 300;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  // 左側に延々と伸び続ける黒帯
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 1px; //ブラウザによって小数点処理の違いですき間ができるため
+    display: block;
+    width: calc(50vw - 50%); // (画面全幅 - コンテンツ幅） ÷ 2
+    height: 100%;
+    content: '';
+    transform: translateX(-100%);
+    background-color: $color_black; //CSS変数で設定した黒
+  }
+}
+
+.header_nav {
+
+  // .header_nav のスマホ
+  @include media() {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    // スマホナビのアイコン
+    &::before {
+      position: absolute;
+      z-index: 100;
+      top: .3em;
+      right: .2em;
+      display: block;
+      font-family: 'Material Icons';
+      font-size: 10vw;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1;
+      content: '\e5d2';
+    }
+
+    // スマホメニュー表示時のボタンをcloseに
+    &.on::before {
+      content: '\e5cd';
+    }
+  }
+}
+
+
+// ナビメニュー（SNS以外）
+.header_nav_list {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  font-size: 15px;
+  font-style: italic;
+
+  gap: 2.5em; //flex要素のすき間調整ができるプロパティ。古いブラウザには効かないので注意
+
+  // .header_nav_list のスマホ
+  @include media() {
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    transition: .4s;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, .95);
+
+    // スマホメニュー表示のロジック
+    .on & {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    // スマホメニューの文字調整
+    a {
+      font-size: 8vw;
+      font-weight: 300;
+    }
+  }
+}

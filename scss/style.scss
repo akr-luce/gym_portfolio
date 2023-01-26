@@ -4,3 +4,10 @@
 // 初期設定
 @use "./foundation/reset";
 @use "./foundation/base";
+
+// 共通パーツ
+@use './object/component';
+
+// ページ共通のレイアウト
+@use "./layout/header";
+@use "./layout/wrapper";
