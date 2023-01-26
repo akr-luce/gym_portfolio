@@ -1,0 +1,52 @@
+@use './setting' as *;
+
+
+// ページ内リンクにアニメーション付与
+html {
+  scroll-behavior: smooth;
+}
+
+// サイト全体の基本設定
+body {
+  font-family: $gothic; //フォントファミリーをゴシックに（変数を使用）
+  font-size: 16px; //サイト基準のフォントサイズ
+  line-height: 1.75; //行間を 3/4文字分に
+  letter-spacing: .1em; //文字間を 1/10文字分に
+  color: $color_black; //サイト標準の文字色を黒に（変数を使用）
+  font-feature-settings: 'palt'; //サイト全体の文字を自動でカーニング（文字詰め）
+}
+
+
+// 画像全て適用　はみ出さないようにしてすき間できるバグ対策
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+
+a {
+  // リンク全てにデフォルトで透過ホバーのアニメーション付与
+  transition: opacity .3s;
+
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      opacity: .5;
+    }
+  }
+
+  // 外部リンクにアイコン付与
+  &[target=_blank] {
+    position: relative;
+
+    &::after {
+      margin-left: .25em;
+      font-family: 'Material Icons';
+      font-size: .75em;
+      font-weight: 400;
+      font-style: normal;
+      content: '\e89e'; //別ウィンドウのアイコン番号
+      vertical-align: middle;
+    }
+  }
+}

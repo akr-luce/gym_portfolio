@@ -1,0 +1,23 @@
+////////////// 変数 //////////////
+
+// 色
+$color_black: #333;
+$color_key: #098299;
+$color_gradient: linear-gradient(-35deg, rgba(255, 255, 179, 1) 0%, rgba(141, 203, 207, 1) 42.97%, rgba(0, 69, 99, 1) 100%);
+
+// フォント
+$gothic: 'Fira Sans', '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック', 'Yu Gothic', sans-serif;
+
+// 画像比率
+$aspect_image: 100 / 71;
+
+
+
+////////////// Mixin //////////////
+
+//メディアクエリ
+@mixin media($breakpoint: 768px) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
