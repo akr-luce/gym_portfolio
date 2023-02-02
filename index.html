@@ -47,9 +47,67 @@
 
   <!-- 自作CSS -->
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- ローディング -->
+  <style>
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      background-color: #fff;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loading.hide {
+      opacity: 0;
+      /* 本体を消す */
+      visibility: hidden;
+      /* 存在しないものとする */
+      pointer-events: none;
+      transition: .4s 1s;
+    }
+
+    .loader {
+      width: 40px;
+      height: 40px;
+      text-indent: -300%;
+      overflow: hidden;
+
+      border: 4px solid rgba(145, 145, 145, .2);
+      border-left: 4px solid transparent;
+      border-radius: 1000px;
+
+      animation-name: load;
+      animation-duration: 1.1s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes load {
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 
 <body class="home">
+
+  <div class="loading">
+    <div class="loader">Loading...</div>
+  </div>
+
   <!-- ヘッダー -->
   <header class="header">
     <!-- ヘッダーの内側（コンテンツ幅揃え） -->
@@ -83,6 +141,24 @@
       </nav>
     </div>
   </header>
+
+  <!-- スクロールアニメーション -->
+  <div class="header_scroll anime_scroll">
+    scroll
+  </div>
+
+  <main class="main">
+    <!-- メインビジュアル -->
+    <section class="mv wrapper-full">
+      <h1 class="mv_copy">
+        <span>
+          届けたい“想い”が<br class="pc_none">伝わる<br class="sp_none">デザインを。
+          <!-- 改行位置をPCとスマホで調整 -->
+        </span>
+      </h1>
+      <img src="/image/mv.jpg" alt="" class="mv_image">
+    </section>
+  </main>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"

@@ -1,0 +1,14 @@
+@use "../foundation/setting" as *;
+
+@keyframes scroll {
+
+  // アニメーションの始まり
+  0% {
+    transform: translateY(0);
+  }
+
+  // アニメーションの終わり
+  100% {
+    transform: translateY(80px);
+  }
+}

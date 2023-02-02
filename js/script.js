@@ -4,3 +4,8 @@ $(function () {
     $(this).toggleClass('on');
   });
 });
+
+//ローディング
+$(window).on('load', function () {
+  $('.loading').addClass('hide');
+});

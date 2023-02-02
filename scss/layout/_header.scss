@@ -120,3 +120,53 @@
     }
   }
 }
+
+.header_scroll {
+  position: absolute;
+  top: 95vh;
+  left: 40px;
+  font-weight: bold;
+  font-style: italic;
+  transform: translateY(-100%);
+
+  writing-mode: vertical-rl; // 縦書き
+
+  display: flex;
+  align-items: center;
+
+  // 縦棒
+  &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 80px;
+    background-color: $color_black;
+    margin-top: 1em;
+  }
+
+  // ボール
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 80px; //縦の棒と同じ高さにするため（topには文字があるので）
+    left: 50%;
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin-left: -2px;
+
+    border-radius: 1em;
+    background-color: #333;
+  }
+}
+
+.anime_scroll {
+
+  // ボール
+  &::before {
+    animation-name: scroll;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+}

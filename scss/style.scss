@@ -4,10 +4,21 @@
 // 初期設定
 @use "./foundation/reset";
 @use "./foundation/base";
+@use "./foundation/animate";
+
 
 // 共通パーツ
 @use './object/component';
 
+
 // ページ共通のレイアウト
 @use "./layout/header";
 @use "./layout/wrapper";
+
+
+// 特定のセクションやエリア
+@use "./object/project/mv";
+
+
+// 強制的に上書き
+@use "./object/utility";

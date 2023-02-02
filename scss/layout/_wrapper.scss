@@ -15,3 +15,12 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+// メインコンテンツ
+.main {
+  margin-top: 160px;
+
+  @include media {
+    margin-top: 20vw;
+  }
+}

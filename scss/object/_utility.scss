@@ -1,0 +1,15 @@
+@use "../foundation/setting" as *;
+
+// PCのときだけ消す
+@media (min-width: 767px) {
+  .pc_none {
+    display: none !important;
+  }
+}
+
+// スマホのときだけ消す
+@media (max-width: 768px) {
+  .sp_none {
+    display: none !important;
+  }
+}
